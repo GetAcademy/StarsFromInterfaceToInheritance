@@ -1,0 +1,7 @@
+﻿namespace StarsFromInterfaceToInheritance
+{
+    class A
+    {
+
+    }
+}
