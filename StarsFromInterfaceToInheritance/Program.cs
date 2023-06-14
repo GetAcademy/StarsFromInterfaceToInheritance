@@ -1,0 +1,3 @@
+﻿using StarsFromInterfaceToInheritance;
+
+StarDemo.Run();
