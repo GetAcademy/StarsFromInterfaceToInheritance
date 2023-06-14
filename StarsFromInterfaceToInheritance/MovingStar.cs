@@ -1,6 +1,6 @@
 ﻿namespace StarsFromInterfaceToInheritance
 {
-    internal class MovingStar : IStar
+    internal class MovingStar : Star
     {
         private int _column;
         private int _row;
@@ -16,14 +16,14 @@
             _row = row;
         }
 
-        public void Show()
+        public override void Show()
         {
             Console.CursorLeft = _column;
             Console.CursorTop = _row;
             Console.Write("*");
         }
 
-        public void Update()
+        public override void Update()
         {
             _column = (_column + _colSpeed) % Console.WindowWidth;
             _row = (_row + _rowSpeed) % Console.WindowHeight;

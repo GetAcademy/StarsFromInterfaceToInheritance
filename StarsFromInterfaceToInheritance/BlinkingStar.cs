@@ -1,11 +1,9 @@
 ﻿namespace StarsFromInterfaceToInheritance
 {
-    internal class BlinkingStar : IStar
+    internal class BlinkingStar : Star
     {
         private readonly string _characters = "•*+*• ";
         private int _index;
-        private int _column;
-        private int _row;
 
         public BlinkingStar(int column, int row)
         {
@@ -13,7 +11,7 @@
             _row = row;
         }
 
-        public void Show()
+        public override void Show()
         {
             Console.CursorLeft = _column;
             Console.CursorTop = _row;
@@ -21,14 +19,10 @@
             Console.Write(character);
         }
 
-        public void Update()
+        public override void Update()
         {
             _index++;
             if (_index == _characters.Length) _index = 0;
-
-            //_index = (_index + 1) % _characters.Length;
-
-            //_index = _index == _characters.Length - 1 ? 0 : _index + 1;
         }
     }
 }

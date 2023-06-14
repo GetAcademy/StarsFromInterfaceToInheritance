@@ -8,10 +8,13 @@ namespace StarsFromInterfaceToInheritance
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.CursorVisible = false;
-            var star1 = new BlinkingStar(40, 5);
-            var star2 = new MovingStar(
-                5, 10, 1, 0);
-            var stars = new IStar[] { star1, star2 };
+            var stars = new Star[]
+            {
+                new BlinkingStar(40, 5), 
+                new MovingStar(5, 10, 1, 0),
+                new BlinkingStar(10, 7), 
+                new MovingStar(15, 10, 1, 1),
+            };
 
             while (true)
             {
@@ -21,7 +24,6 @@ namespace StarsFromInterfaceToInheritance
                     star.Show();
                     star.Update();
                 }
-
                 Thread.Sleep(200);
             }
         }
