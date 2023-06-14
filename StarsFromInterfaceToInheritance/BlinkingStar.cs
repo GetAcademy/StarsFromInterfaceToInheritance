@@ -5,18 +5,13 @@
         private readonly string _characters = "•*+*• ";
         private int _index;
 
-        public BlinkingStar(int column, int row)
+        public BlinkingStar(int column, int row) : base(column, row)
         {
-            _column = column;
-            _row = row;
         }
 
-        public override void Show()
+        protected override char GetCharacter()
         {
-            Console.CursorLeft = _column;
-            Console.CursorTop = _row;
-            var character = _characters[_index];
-            Console.Write(character);
+            return _characters[_index];
         }
 
         public override void Update()

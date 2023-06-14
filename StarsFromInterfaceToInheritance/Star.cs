@@ -1,18 +1,29 @@
 ﻿namespace StarsFromInterfaceToInheritance
 {
-    internal class Star
+    internal abstract class Star
     {
         protected int _column;
         protected int _row;
 
-        public virtual void Show()
+        protected Star(int column, int row)
         {
-
+            _column = column;
+            _row = row;
         }
 
-        public virtual void Update()
+        public void Show()
         {
-
+            Console.CursorLeft = _column;
+            Console.CursorTop = _row;
+            var character = GetCharacter();
+            Console.Write(character);
         }
+
+        protected virtual char GetCharacter()
+        {
+            return '*';
+        }
+
+        public abstract void Update();
     }
 }
