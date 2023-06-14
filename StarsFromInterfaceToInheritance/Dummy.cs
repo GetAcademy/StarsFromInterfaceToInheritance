@@ -1,6 +1,16 @@
 ﻿namespace StarsFromInterfaceToInheritance
 {
-    class A
+    class A : object
+    {
+
+    }
+
+    class B : A
+    {
+
+    }
+
+    class C : B
     {
 
     }
